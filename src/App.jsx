@@ -12,7 +12,9 @@ import Test from "./assets/components/Test";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  console.log(isLoggedIn);
+  // console.log(isLoggedIn);
+  // setIsLoggedIn(localStorage.getItem("isLoggedIn"));
+  // console.log(localStorage.getItem("isLoggedIn"))
   return (
     <Router>
       <Routes>
@@ -22,7 +24,7 @@ function App() {
         />
         <Route
           path="/admin"
-          element={isLoggedIn ? <AdminPage /> : <Navigate to="/login" />}
+          element={isLoggedIn || localStorage.getItem("isLoggedIn") == "true" ? <AdminPage /> : <Navigate to="/login" />}
         />
         {/* <Route path="/admin" element={<AdminPage />} /> */}
         <Route path="/register" element={<Register />} />

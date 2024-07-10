@@ -27,7 +27,7 @@ function UserList() {
       });
       console.log('A' + response.data);
       if (response.data.status === "success") {
-        alert(response.data.message);
+        // alert(response.data.message);
         getUserList();
       } else {
         alert(response.data.status + response.data.message);

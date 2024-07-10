@@ -19,6 +19,7 @@ function Login({ setIsLoggedIn }) {
       });
       if (response.data === "Login successful") {
         setIsLoggedIn(true);
+        localStorage.setItem("isLoggedIn", true);
         navigate("/admin");
       } else {
         alert(response.data);

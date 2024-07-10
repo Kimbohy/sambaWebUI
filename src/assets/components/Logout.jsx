@@ -12,7 +12,8 @@ function Logout() {
 
   const handleNavigation = () => {
     // Change the route to /about
-    navigate("/login");
+    localStorage.setItem("isLoggedIn", false);
+    navigate("/");
   };
 
   return <button onClick={out}>Logout</button>;

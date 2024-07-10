@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import Password from "./Password";
 
-function AddComp({ setReload, setAdding }) {
+function AddComp({ setReload }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [group, setGroup] = useState("gest");
@@ -17,9 +17,11 @@ function AddComp({ setReload, setAdding }) {
         group,
       });
       if (response.data.status === "success") {
-        alert(response.data.message);
-        setAdding(false);
+        console.log(response.data.message);
+        // setAdding(false);
+        localStorage.setItem("message", response.data.message);
         setReload(prev => !prev); // Toggle reload state to refresh the user list
+        // localStorage.setItem("message", "");
       } else {
         alert(response.data.status + response.data.message);
       }
