@@ -149,10 +149,13 @@ aside {
   display: flex;
   justify-content: flex-end;
 }
-a {
-  text-decoration: none;
-  color: whitesmoke;
+
+.boxHeadContainer{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
+
 #deconnecte button {
   background-color: rgba(0, 0, 0, 0.836);
 }

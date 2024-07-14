@@ -52,7 +52,7 @@ function Group() {
           </li>
         ))
       ) : (
-        <UserList group={userMember} />
+        <UserList group={userMember} funct={setReload} />
       )}
     </ul>
   );
