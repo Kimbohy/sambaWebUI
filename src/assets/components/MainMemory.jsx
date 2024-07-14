@@ -40,7 +40,7 @@ function MainMemory() {
     const safeMemory = memory || defaultMemory;
 
   // Debugging
-  console.log("Memory object:", memory);
+  // console.log("Memory object:", memory);
 
   return (
     <div className="cart" id="totalMemory">

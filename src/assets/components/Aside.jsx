@@ -10,6 +10,7 @@ function Aside() {
           id="dashboardSection"
           onClick={() => {
             localStorage.setItem("page", "dashboard");
+            window.location.reload();
           }}
         >
           <img src="/src/assets/img/app.png" alt="" />
@@ -19,6 +20,7 @@ function Aside() {
           id="userSection"
           onClick={() => {
             localStorage.setItem("page", "users");
+            window.location.reload();
           }}
         >
           <img src="/src/assets/img/user.png" alt="" />
@@ -28,6 +30,7 @@ function Aside() {
           id="groupSection"
           onClick={() => {
             localStorage.setItem("page", "group");
+            window.location.reload();
           }}
         >
           <img src="/src/assets/img/people.png" alt="" />

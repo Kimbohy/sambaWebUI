@@ -41,17 +41,16 @@ function Group() {
   return (
     <ul id="userList">
       {userMember.length === 0 ? (
-        <div>
-          <li id="ajout" key="ajout">
-            <BoxHead setReload={setReload} />
+        <li id="ajout" key="ajout">
+          <BoxHead setReload={setReload} />
+        </li>
+      ) : null}
+      {userMember.length === 0 ? (
+        groups.map(([group]) => (
+          <li key={group} onClick={() => member(group)}>
+            <p>{group}</p>
           </li>
-          <MainMemory />
-          {groups.map(([group]) => (
-            <li key={group} onClick={() => member(group)}>
-              <p>{group}</p>
-            </li>
-          ))}
-        </div>
+        ))
       ) : (
         <UserList group={userMember} />
       )}
