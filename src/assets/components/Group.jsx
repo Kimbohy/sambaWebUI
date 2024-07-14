@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import BoxHead from "./BoxHead";
 import UserList from "./UserList";
+import MainMemory from "./MainMemory";
 
 function Group() {
   const [users, setUsers] = useState([]);
@@ -44,6 +45,7 @@ function Group() {
           <li id="ajout" key="ajout">
             <BoxHead setReload={setReload} />
           </li>
+          <MainMemory />
           {groups.map(([group]) => (
             <li key={group} onClick={() => member(group)}>
               <p>{group}</p>
