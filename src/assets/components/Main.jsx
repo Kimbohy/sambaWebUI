@@ -1,11 +1,11 @@
 import Head from "./Head";
 import Content from "./Content";
 
-function Main() {
+function Main({ page }) {
   return (
     <div id="main">
-        <Head />
-      <Content />
+      <Head />
+      <Content page={page} />
     </div>
   );
 }

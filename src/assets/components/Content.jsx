@@ -1,16 +1,13 @@
 import Dashboard from "./Dashboard";
 import Group from "./Group";
 import UserList from "./UserList";
-import { useState } from "react";
 
-function Content() {
-  const [page, setPage] = useState("dashboard");
+function Content({ page }) {
   return (
     <div>
-      {localStorage.getItem("page") === "dashboard" && <Dashboard />}
-      {localStorage.getItem("page") === "users" && <UserList />}
-      {localStorage.getItem("page") === "group" && <Group />}
-      {!localStorage.getItem("page") && <h1>Dashboard</h1>}
+      {page === "dashboard" && <Dashboard />}
+      {page === "users" && <UserList />}
+      {page === "groups" && <Group />}
     </div>
   );
 }

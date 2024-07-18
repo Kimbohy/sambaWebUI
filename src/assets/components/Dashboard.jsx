@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import MainMemory from "./MainMemory";
 import UserNumber from "./UserNumber";
 import "../styles/Dashboard.css";
+// import FileExplorer from "./FileExplorer";
 
 function Dashboard() {
   const [users, setUsers] = useState([]);
@@ -18,6 +19,7 @@ function Dashboard() {
     <div id="dashboard">
         <MainMemory />
         { users.length > 0 && <UserNumber users={users} /> }
+        {/* <FileExplorer /> */}
     </div>
   );
 }

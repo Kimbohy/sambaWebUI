@@ -1,4 +1,4 @@
-function Aside() {
+function Aside({ changPage }) {
   return (
     <aside>
       <div id="profile">
@@ -9,8 +9,7 @@ function Aside() {
         <li
           id="dashboardSection"
           onClick={() => {
-            localStorage.setItem("page", "dashboard");
-            window.location.reload();
+            changPage("dashboard");
           }}
         >
           <img src="/src/assets/img/app.png" alt="" />
@@ -19,8 +18,7 @@ function Aside() {
         <li
           id="userSection"
           onClick={() => {
-            localStorage.setItem("page", "users");
-            window.location.reload();
+            changPage("users");
           }}
         >
           <img src="/src/assets/img/user.png" alt="" />
@@ -29,8 +27,7 @@ function Aside() {
         <li
           id="groupSection"
           onClick={() => {
-            localStorage.setItem("page", "group");
-            window.location.reload();
+            changPage("groups");
           }}
         >
           <img src="/src/assets/img/people.png" alt="" />
