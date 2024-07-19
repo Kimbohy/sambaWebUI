@@ -115,7 +115,7 @@ aside {
     justify-content: center; */
 }
 
-#userList {
+#userList, #groupList {
   width: 100%;
   max-width: 50vw;
   height: 400px;
@@ -126,7 +126,7 @@ aside {
   border-radius: 10px;
 }
 
-#userList > li {
+#userList > li, #groupList > li {
   padding: 0 10px;
   height: 40px;
   border-bottom: 1px solid rgb(207, 200, 200);

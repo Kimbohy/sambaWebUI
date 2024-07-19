@@ -2,7 +2,7 @@ import BoxHead from "./BoxHead";
 import axios from "axios";
 import { useState } from "react";
 
-function UserList({ group, funct, usersData, backGroup }) {
+function UserList({ group, usersData, back }) {
   const [users, setUsers] = useState(usersData);
   const [reload, setReload] = useState(false);
 
@@ -28,7 +28,7 @@ function UserList({ group, funct, usersData, backGroup }) {
   return (
     <ul id="userList">
       <li id="ajout" key={"ajout"}>
-        <BoxHead setReload={funct} groups={group} backGroup={backGroup} />
+        <BoxHead setReload={setReload} groups={group} back={back} />
       </li>
       {users.map((user) => {
         if ((group && user.user_group === group) || !group)

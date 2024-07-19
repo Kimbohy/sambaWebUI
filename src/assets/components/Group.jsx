@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import BoxHead from "./BoxHead";
 import UserList from "./UserList";
-import MainMemory from "./MainMemory";
 
-function Group({usersData, backGroup}) {
+function Group({ usersData }) {
   const [reload, setReload] = useState(false);
   const [groups, setGroups] = useState([]);
   const [userMember, setUserMember] = useState([]);
@@ -37,10 +36,10 @@ function Group({usersData, backGroup}) {
   };
 
   return (
-    <ul id="userList">
+    <ul id="groupList">
       {userMember.length === 0 ? (
         <li id="ajout" key="ajout">
-          <BoxHead setReload={setReload} backGroup={backGroup} />
+          <BoxHead setReload={setReload} />
         </li>
       ) : null}
       {userMember.length === 0 ? (
@@ -50,7 +49,12 @@ function Group({usersData, backGroup}) {
           </li>
         ))
       ) : (
-        <UserList group={userMember} usersData={usersData} funct={setReload} />
+        <UserList
+          group={userMember}
+          usersData={usersData}
+          setReload={setReload}
+          back={member}
+        />
       )}
     </ul>
   );
