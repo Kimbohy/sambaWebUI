@@ -1,22 +1,10 @@
-import { useEffect, useState } from "react";
 import BoxHead from "./BoxHead";
 import axios from "axios";
+import { useState } from "react";
 
-function UserList({ group, funct }) {
-  const [users, setUsers] = useState([]);
+function UserList({ group, funct, usersData, backGroup }) {
+  const [users, setUsers] = useState(usersData);
   const [reload, setReload] = useState(false);
-
-  useEffect(() => {
-    getUserList();
-  }, [reload]);
-
-  function getUserList() {
-    fetch("http://localhost:800/userList.php")
-      .then((response) => response.json())
-      .then((data) => {
-        setUsers(data);
-      });
-  }
 
   const handleSubmit = async (e, username) => {
     e.preventDefault();
@@ -40,7 +28,7 @@ function UserList({ group, funct }) {
   return (
     <ul id="userList">
       <li id="ajout" key={"ajout"}>
-        <BoxHead setReload={funct} groups={group} />
+        <BoxHead setReload={funct} groups={group} backGroup={backGroup} />
       </li>
       {users.map((user) => {
         if ((group && user.user_group === group) || !group)

@@ -3,21 +3,19 @@ import BoxHead from "./BoxHead";
 import UserList from "./UserList";
 import MainMemory from "./MainMemory";
 
-function Group() {
-  const [users, setUsers] = useState([]);
+function Group({usersData, backGroup}) {
   const [reload, setReload] = useState(false);
   const [groups, setGroups] = useState([]);
   const [userMember, setUserMember] = useState([]);
 
   useEffect(() => {
-    getUserList();
+    getGroupList();
   }, [reload]);
 
-  function getUserList() {
+  function getGroupList() {
     fetch("http://localhost:800/userList.php")
       .then((response) => response.json())
       .then((data) => {
-        setUsers(data);
         getGroups(data);
       });
   }
@@ -42,7 +40,7 @@ function Group() {
     <ul id="userList">
       {userMember.length === 0 ? (
         <li id="ajout" key="ajout">
-          <BoxHead setReload={setReload} />
+          <BoxHead setReload={setReload} backGroup={backGroup} />
         </li>
       ) : null}
       {userMember.length === 0 ? (
@@ -52,7 +50,7 @@ function Group() {
           </li>
         ))
       ) : (
-        <UserList group={userMember} funct={setReload} />
+        <UserList group={userMember} usersData={usersData} funct={setReload} />
       )}
     </ul>
   );

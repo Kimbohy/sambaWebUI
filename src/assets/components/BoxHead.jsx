@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import AddComp from "./AddComp";
 
-function BoxHead({ setReload, groups }) {
+function BoxHead({ setReload, groups, backGroup }) {
   const [adding, setAdding] = useState(false);
   const containerRef = useRef(null);
   const imgRef = useRef(null);
@@ -30,7 +30,7 @@ function BoxHead({ setReload, groups }) {
         <img
           src="/src/assets/img/arrow-circle-left.png"
           alt="arrow"
-          onClick={() => window.location.reload()}
+          onClick={() => backGroup("groups")}
         />
       ) : null}
       <img
